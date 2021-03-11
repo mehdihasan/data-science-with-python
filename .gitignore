@@ -139,7 +139,10 @@ cython_debug/
 
 
 ## misc
-misc/*
+*/misc/*
 
 ## IDE
 .vscode
+
+## mac
+*.DS_Store
