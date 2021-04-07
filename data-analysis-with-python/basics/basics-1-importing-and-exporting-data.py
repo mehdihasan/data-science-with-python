@@ -17,7 +17,7 @@ df.columns = headers
 
 
 ##
-## Printing part of dataß
+## Printing part of data
 ##
 
 print(df.head(5))
@@ -27,5 +27,5 @@ print(df.tail(3))
 ## Exporting a Pandas dataframe to CSV
 ##
 
-path = "results/test_result.csv"
+path = "../results/test_result.csv"
 df.to_csv(path)
