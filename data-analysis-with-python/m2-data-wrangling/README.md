@@ -22,7 +22,7 @@
 - Leave it as missing data
 
 
-### How to drop 
+### How to drop missing values
 - `dataframes.dropna()`
 - `axis=0` drops the entire row
 - `axis=1` drops the entire column
@@ -36,4 +36,18 @@
     ```py
     mean = df["normalized-losses"].mean()
     df["normalized-losses"].replace(np.nan, mean)
+    ```
+
+## Data Formatting
+- Data is usually collected from different places, by different people, which may be stored in different formats. Data formatting means bringing data into a common standard of expression that allows users to make meaningful comparisons.
+- We might want to convert mile to km for city-mpg value
+    ```python
+    df["city-mpg"] = 235/df["city-mpg"]
+    df.rename(column={"city-mpg": "city-L/100km"}, inplace=True)
+    ```
+- We might needed to convert the datatype
+    - `datatype.astype()`
+    - e.g. convert data type to integer in column price
+    ```python
+    df["price"] = df["price"].astype("int")
     ```
