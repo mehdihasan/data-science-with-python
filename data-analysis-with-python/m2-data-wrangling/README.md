@@ -1,17 +1,17 @@
 # Data Wrangling
 
+## Learning Objective
+1. [V] Identify and handle missing values
+2. [V] Data Formatting
+3. [V] Data Normalization (centering/scaling)
+4. Data Binning
+5. Turning Categorical values to numeric variables
+
 
 ## Terms
 - __Data Pre-processing__: It is the process of converting or mapping data from one `raw` form into another format to make it ready for further analysis.
 - Data Pre-processing == Data Cleaning == Data Wrangling 
-
-
-## Learning Objective
-1. Identify and handle missing values
-2. Data Formatting
-3. Data Normalization (centering/scaling)
-4. Data Binning
-5. Turning Categorical values to numeric variables
+- __Linear Regression__
 
 
 ## Identify and handle missing values
@@ -33,7 +33,7 @@
 ### How to replace missing values
 - `dataframe.replace(missing_values, new_value)`
 - first we find the mean value, then we replace
-    ```py
+    ```python
     mean = df["normalized-losses"].mean()
     df["normalized-losses"].replace(np.nan, mean)
     ```
@@ -51,3 +51,34 @@
     ```python
     df["price"] = df["price"].astype("int")
     ```
+
+## Data Normalization
+When we take a look at the used car data set, we notice in the data that the feature “length”
+ranges from 150 to 250, while feature “width” and “height” ranges from 50 to 100.
+We may want to normalize these variables so that the range of the values is consistent.
+This normalization can make some statistical analyses easier down the road.
+By making the ranges consistent between variables, normalization enables a fairer comparison
+between the different features.
+Making sure they have the same impact, it is also important for computational reasons.
+
+### Methods of normalizing data
+- __Simple Feature Scaling__
+  - just divides each value by the maximum value for that feature.
+  - `X(new) = X(old)/X(max)`
+    ```python
+    df["length"] = df["length"]/df["length"].max()
+    ```
+- __Min-Max__
+  - takes each value, X_old, subtracted from the minimum value of that feature, then divides by the range of that feature.
+  - `X(new) = (X(old) - X(min)) / (X(max) - X(min))`
+    ```python
+    df["length"] = (df["length"] - df["length"].min()) / (df["length"].max() - df["length"].min())
+    ```
+- __Z-Score__ / Standard Score
+  - for each value, we subtract the Mu which is the average of the feature, and then divide by the standard deviation (sigma). The resulting values hover around 0, and typically range between -3 and +3, but can be higher or lower.
+  - `X(new) = (X(old) - μ) / σ`
+    ```python
+    df["length"] = (df["length"] - df["length"].mean()) / df["length"].std()
+    ```
+  - `mean()` method will return the average value of the feature in the dataset
+  - `std()` method will return the standard deviation of the features in the dataset.
