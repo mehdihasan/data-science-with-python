@@ -1,9 +1,24 @@
 # Data Wrangling
 
+- [Data Wrangling](#data-wrangling)
+  - [Learning Objective](#learning-objective)
+  - [Terms](#terms)
+  - [Identify and handle missing values](#identify-and-handle-missing-values)
+    - [How to drop missing values](#how-to-drop-missing-values)
+    - [How to replace missing values](#how-to-replace-missing-values)
+  - [Data Formatting](#data-formatting)
+  - [Data Normalization](#data-normalization)
+    - [Methods of normalizing data](#methods-of-normalizing-data)
+  - [Data Binning](#data-binning)
+    - [How to binning in python](#how-to-binning-in-python)
+  - [Turning Categorical values to numeric variables](#turning-categorical-values-to-numeric-variables)
+    - [one-hot encoding](#one-hot-encoding)
+
+
 ## Learning Objective
-1. [V] Identify and handle missing values
-2. [V] Data Formatting
-3. [V] Data Normalization (centering/scaling)
+1. Identify and handle missing values
+2. Data Formatting
+3. Data Normalization (centering/scaling)
 4. Data Binning
 5. Turning Categorical values to numeric variables
 
@@ -12,6 +27,7 @@
 - __Data Pre-processing__: It is the process of converting or mapping data from one `raw` form into another format to make it ready for further analysis.
 - Data Pre-processing == Data Cleaning == Data Wrangling 
 - __Linear Regression__
+- __one-hot encoding__
 
 
 ## Identify and handle missing values
@@ -106,3 +122,17 @@ we need 4 numbers as dividers that are equal distance apart.
 
 You can then use histograms to visualize the distribution of the data after they’ve been
 divided into bins.
+
+
+## Turning Categorical values to numeric variables
+
+### one-hot encoding
+Most statistical models cannot take in objects or strings as input and, for model training,
+only take the numbers as inputs. In the car dataset, the "fuel-type" feature as a categorical variable has two values, "gas" or "diesel”, which are in String format. For further analysis, we can convert these variables into some form of numeric format. We encode the values by adding new features corresponding to each unique element in the original feature we would like to encode. In the case where the feature “Fuel” has two unique values, gas and diesel, we create two new features ‘gas’ and ‘diesel.' When a value occurs in the original feature we set the corresponding value to one in the new feature; the rest of the features are set to zero. In the fuel example, for car B, the fuel value is diesel. Therefore, we set the feature diesel equal to one and the gas feature to zero. Similarly, for car D the fuel value is gas. Therefore we set the feature gas equal to one and the feature diesel equal to zero.
+
+In pandas, we can use get_dummies() method to convert categorical variables to dummy
+variables. In Python, transforming categorical variables to dummy variables is simple.
+
+```python
+pd.get_dummies(df['fuel'])
+```
