@@ -82,3 +82,27 @@ Making sure they have the same impact, it is also important for computational re
     ```
   - `mean()` method will return the average value of the feature in the dataset
   - `std()` method will return the standard deviation of the features in the dataset.
+
+
+## Data Binning
+Binning is when you group values together into bins. For example, you can bin “age” into [0 to 5], [6 to 10], [11 to 15] and so on.
+
+### How to binning in python
+
+we need 4 numbers as dividers that are equal distance apart.
+
+1. First we use the numpy function “linspace” to return the array “bins” that contains 4 equally spaced numbers over the specified interval of the price.
+  ```python
+  bins = np.linspace(min(df["price"]), max(df["price"]), 4)
+  ```
+2. We create a list “group_names “ that contains the different bin names.
+  ```python
+  group_names = ["Low", "Medium", "High"]
+  ```
+3. We use the pandas function ”cut” to segment and sort the data values into bins.
+  ```python
+  df["price-binned"] = pd.cut(df["price"], bins, labels = group_names, include_lowest = True)
+  ```
+
+You can then use histograms to visualize the distribution of the data after they’ve been
+divided into bins.
