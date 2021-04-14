@@ -35,7 +35,12 @@ Data Wrangling is the process of converting data from the initial format to a fo
 - NaN, ?, N/A, 0, blank cell
 - go back and collect the right data
 - drop the data 
+  - drop the whole row
+  - drop the whole column
 - replacing the data - less accurate - might be average of of the column / or most common string 
+  - replace it by mean
+  - replace it by frequency
+  - replace it based on other functions
 - Leave it as missing data
 
 
