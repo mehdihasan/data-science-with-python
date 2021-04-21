@@ -28,3 +28,34 @@
     - Boxplots are a great way to visualize numeric data, since you can visualize the various distributions of the data. The main features that the boxplot shows are the median of the data, which represents where the middle datapoint is. The Upper Quartile shows where the 75th percentile is, the Lower Quartile shows where the 25th percentile is. The data between the Upper and Lower Quartile represents the Interquartile Range. Next, you have the Lower and Upper Extremes. These are calculated as 1.5 times the interquartile range above the 75th percentile, and as 1.5 times the IQR below the 25th percentile. Finally, boxplots also display outliers as individual dots that occur outside the upper and lower extremes. With boxplots, you can easily spot outliers and also see the distribution and skewness of the data. Boxplots make it easy to compare between groups. In this example, using Boxplot we can see the distribution of different categories of the “drive-wheels” feature over price feature. We can see that the distribution of price between the rwd (rear wheel drive) and the other categories are distinct, but the price for fwd (front wheel drive) and 4wd (four wheel drive) are almost indistinguishable.
 - Scatter Plot
     - Often times we tend to see continuous variables in our data. These data points are numbers contained in some range. For example, in our dataset, price and engine size are continuous variables. What if we want to understand the relationship between “engine size” and ”price”? Could engine size possibly predict the price of a car? One good way to visualize this is using a scatter plot. Each observation in a scatter plot is represented as a point. This plot shows the relationship between two variables: The predictor variable: is the variable that you are using to predict an outcome. In this case, our predictor variable is the engine size. The target variable: is the variable that you are trying to predict. In this case, our target variable is the price, since this would be the outcome. In a scatterplot, we typically set the predictor variable on the x-axis, or horizontal axis and we set the target variable on the y-axis or vertical axis. In this case, we will thus plot the engine size on the x-axis and the price on the y-axis. We are using the Matplotlib function “scatter” here, taking in x and a y variable. Something to note is that it’s always important to label your axes and write a general plot title, so that you know what you are looking at. Now how is the variable Engine Size related to Price? From the scatterplot we see that as the engine size goes up, the price of the car also goes up. This is giving us an initial indication that there is a positive linear relationship between these two variables.
+
+
+## Group By
+
+The group by method is used on categorical variables, groups the data into subsets according to the different categories of that variable. Group by can be applied to a single variable or multiple variables by passing in multiple variable names.
+
+### How to 
+
+```python
+df_test = df[['drive-wheels', 'body-style', 'price']]
+df_grp = df_test.groupby(['drive-wheels', 'body-style'], as_index=False).mean()
+```
+
+### Visualization
+
+#### pivot method
+using pivot table: A pivot table has one variable displayed along the columns and the other variable displayed along the rows.
+rectangular grid: easier to visualize. This is similar to what is usually done in Excel spreadsheets.
+
+```python
+df_pivot = df_grp.pivot(index='drive-wheels', columns='body-style')
+```
+
+#### heatmap
+heatmap plot: Heat map takes a rectangular grid of data and assigns a color intensity based on the data value at the grid points. It is a great way to plot the target variable over multiple variables and through this get visual clues of the relationship between these variables and the target.
+
+```python
+plt.pcolor(df_pivot, cmap='RdBu')
+plt.colorbar()
+plt.show()
+```
