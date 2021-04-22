@@ -59,3 +59,31 @@ plt.pcolor(df_pivot, cmap='RdBu')
 plt.colorbar()
 plt.show()
 ```
+
+
+## Analysis of Variance ANOVA
+
+### Why do we perform ANOVA?
+ANOVA is a statistical test that stands for "Analysis of Variance". ANOVA can be used to find the correlation between different groups of a categorical variable. According to the car dataset, we can use ANOVA to see if there is any difference in mean price for the different car makes such as Subaru and Honda.
+
+### What we obtain from ANOVA?
+The ANOVA test returns two values: (1) the F-test score and (2) the p-value.
+
+__The F-test__ calculates the ratio of variation between the group's mean over the variation within each of the sample groups.
+
+__The p-value__ shows whether the obtained result is statistically significant.
+
+### How to perform
+
+```python
+df_anova = df[["make", "price"]]
+grouped_anova = df_anova.groupby(["make"])
+## ANOVA between "Honda" and "Subaru"
+anova_resulta_1 = stats.f_oneway(grouped_anova.get_group("honda")["price"], grouped_anova.get_group("subaru")["price"])
+## ANOVA between "Honda" and "Jaguar"
+anova_resulta_2 = stats.f_oneway(grouped_anova.get_group("honda")["price"], grouped_anova.get_group("jaguar")["price"])
+```
+
+>>> ANOVA result 1: F=0.197..., p=F_onewayResult(statistic=0.197...), pvalue=0.660...
+
+>>> ANOVA result 1:  F=400.925..., p=F_onewayResult(statistic=400.925...), pvalue=1.058...e-11
