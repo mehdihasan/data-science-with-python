@@ -1,3 +1,27 @@
+- [EDA - Exploratory Data Analysis](#eda---exploratory-data-analysis)
+  - [Learning Objectives](#learning-objectives)
+  - [Descriptive Statistics](#descriptive-statistics)
+  - [Group By](#group-by)
+    - [How to](#how-to)
+    - [Visualization](#visualization)
+      - [pivot method](#pivot-method)
+      - [heatmap](#heatmap)
+  - [Analysis of Variance ANOVA](#analysis-of-variance-anova)
+    - [Why do we perform ANOVA?](#why-do-we-perform-anova)
+    - [What we obtain from ANOVA?](#what-we-obtain-from-anova)
+    - [How to perform](#how-to-perform)
+  - [Correlation](#correlation)
+    - [What is Correlation?](#what-is-correlation)
+    - [Example and how to](#example-and-how-to)
+      - [Positive Correlation](#positive-correlation)
+      - [Negative Correlation](#negative-correlation)
+      - [Weak Correlation](#weak-correlation)
+  - [Advanced Correlation](#advanced-correlation)
+    - [Example and how to](#example-and-how-to-1)
+      - [Strong Positive Correlation](#strong-positive-correlation)
+
+
+
 # EDA - Exploratory Data Analysis
 - Summarize main characteristics of the data 
 - Gain better understanding of the dataset.
