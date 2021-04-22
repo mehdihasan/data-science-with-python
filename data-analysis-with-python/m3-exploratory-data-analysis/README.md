@@ -87,3 +87,63 @@ anova_resulta_2 = stats.f_oneway(grouped_anova.get_group("honda")["price"], grou
 >>> ANOVA result 1: F=0.197..., p=F_onewayResult(statistic=0.197...), pvalue=0.660...
 
 >>> ANOVA result 1:  F=400.925..., p=F_onewayResult(statistic=400.925...), pvalue=1.058...e-11
+
+
+
+## Correlation
+
+### What is Correlation?
+Correlation is a statistical metric for measuring to what extent different variables are interdependent.  
+In other words, when we look at two variables over time, if one variable changes how does this affect change in the other variable?  
+### Example and how to 
+
+#### Positive Correlation
+e.g. 1, engine size vs price.  
+(using seaborn.regplot to create the scatter plot)
+```python
+sns.regplot(x="engine-size", y="prices", data=df)
+plt.ylim(0,)
+```
+#### Negative Correlation
+e.g. 2, highway-mpg and price
+```python
+sns.regplot(x="highway-mpg", y="prices", data=df)
+plt.ylim(0,)
+```
+
+#### Weak Correlation
+e.g. 3, peak-rpm and price
+```python
+sns.regplot(x="peak-rpm", y="prices", data=df)
+plt.ylim(0,)
+```
+
+
+## Advanced Correlation
+
+One way to measure the strength of the correlation between continuous numerical variable is by using a method called Pearson correlation. Pearson correlation method will give you two values: (1) the correlation coefficient and (2) the P-value.
+
+__(1) Correlation Coefficient__
+- Close to +1: Large Positive relationship
+- Close to -1: Large Negative relationship
+- Close to 0: No relationship
+
+__(2) P-value__
+- P-value < 0.001 Strong certainty in the result
+- P-value < 0.05 Moderate certainty in the result
+- P-value < 0.1 Weak certainty in the result
+- P-value > 0.1 No certainty in the result
+
+__Strong Correlation__
+- Correlation Coefficient close to 1 or -1
+- P value less than 0.001
+
+### Example and how to 
+
+#### Strong Positive Correlation
+e.g. 1, horsepower vs price.  
+```python
+pearson_coef, p_value = stats.pearsonr(df["horsepower"], df["price"])
+```
+>> Pearson correlation: 0.81
+>> P-value: 9.35 e-48
