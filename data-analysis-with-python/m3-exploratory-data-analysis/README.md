@@ -32,11 +32,11 @@
 
 
 ## Learning Objectives
-- DESCRIPTIVE STATISTICS: which describe basic features of a dataset and obtains a short summary about the sample and measures of the data.
-- GROUP BY: Basic of Grouping Data using group by, and how this can help to transform our dataset.
-- ANOVA: the analysis of variance, a statistical method in which the variation in a set of observations is divided into distinct components.
-- CORRELATION: The Correlation between different variables.
-- ADVANCED CORRELATION: where we’ll introduce you to various correlation statistical methods, namely Pearson Correlation and Correlation Heatmaps.
+- __DESCRIPTIVE STATISTICS__: which describe basic features of a dataset and obtains a short summary about the sample and measures of the data.
+- __GROUP BY__: Basic of Grouping Data using group by, and how this can help to transform our dataset.
+- __ANOVA__: the analysis of variance, a statistical method in which the variation in a set of observations is divided into distinct components.
+- __CORRELATION__: The Correlation between different variables.
+- __ADVANCED CORRELATION__: where we’ll introduce you to various correlation statistical methods, namely Pearson Correlation and Correlation Heatmaps.
 
 
 ## Descriptive Statistics
