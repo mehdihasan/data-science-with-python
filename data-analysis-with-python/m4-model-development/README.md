@@ -26,6 +26,9 @@ value given one or more other values.
 
 ## Simple & Multiple Linear Regression
 
+Linear Regression will refer to one independent variable to make a prediction. In the other hand, Multiple Linear Regression will refer to multiple independent variables to make a prediction.
+
+
 ![](../../res/simple-linear-regression.jpeg)
 
 ### SLR: Simple Linear Regression
@@ -34,5 +37,43 @@ value given one or more other values.
 
 y = b0 + b1x
 
-b0: the intercept
+b0: the intercept  
 b1: the slope
+
+
+## Model Evaluation using Visualization 
+
+### Regression plots
+Regression plots are a good estimate of: The relationship between two variables:
+1. The strength of the correlation, and
+2. The direction of the relationship (positive or negative).
+
+### Residual plots
+
+### Distribution plots
+
+
+
+## Polynomial Regression and Pipelines
+- Polynomial
+- Regression
+- curvilinear relationship?
+- predictor variables
+- quadratic
+- second order Polynomial Regression
+- third order Polynomial Regression
+- cubic
+- Pipelines:
+  - Normalization -> Polynomial Transform -> Linear Regression
+
+
+
+## Measures for In-Sample Evaluation
+- A way to numerically determine how good the model fits on our data.
+- 2 important measures that we often use to determine the fit of a model are: 
+  1. Mean Square Error (MSE)
+  2. R-squared.
+
+
+
+## Prediction and Decision Making
