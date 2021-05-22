@@ -2,7 +2,20 @@
 
 ## Menu
 
-
+- [Model Development](#model-development)
+  - [Menu](#menu)
+  - [Summary](#summary)
+  - [Learning Objectives](#learning-objectives)
+  - [Model Development](#model-development-1)
+  - [Simple & Multiple Linear Regression](#simple--multiple-linear-regression)
+    - [SLR: Simple Linear Regression](#slr-simple-linear-regression)
+  - [Model Evaluation using Visualization](#model-evaluation-using-visualization)
+    - [Regression plots](#regression-plots)
+    - [Residual plots](#residual-plots)
+    - [Distribution plots](#distribution-plots)
+  - [Polynomial Regression and Pipelines](#polynomial-regression-and-pipelines)
+  - [Measures for In-Sample Evaluation](#measures-for-in-sample-evaluation)
+  - [Prediction and Decision Making](#prediction-and-decision-making)
 
 ## Summary
 We are looking for answer of the following question:
